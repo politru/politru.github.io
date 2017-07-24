@@ -6,11 +6,46 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>generator posts</title>
 </head>
 <body>
     <div class="container" id="app">
-        <h1>Generator</h1>
+        <h1 class="title">Generator</h1>
+        <hr />
+
+
+        <div class="center lists">
+            <div class="row item-post">
+                <input type="file" class="inp_upload-image" onchange="readUrl(this)" title="Загрузить изображение" name="uploadImg" />
+
+                <div class="main-block">
+                    <div class="image">
+                        <div class="top-img"></div>
+                        <div class="upload-img">
+                            <img src="" class="previewImg" alt="">
+                        </div>
+                        <div class="bottom-img">
+                            <h3 class="js_show_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, quod!</h3>
+                        </div>
+                    </div>
+
+                    <div class="form input-group">
+                        <div class="form-group">
+                            <label for="text-post">Текс поста: <br />(юзай &lt;br /&gt)для переноса</label>
+                            <textarea class="form-control js_text_post" onkeyup="handleChangeContentPost(this)" rows="8" id="text-post"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-primary btn-lg button-add-post" id='addPost' role="button">+</a>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./assets/scripts/libs.js"></script>
+    <script src="./assets/scripts/main.js"></script>
 </body>
 </html>
