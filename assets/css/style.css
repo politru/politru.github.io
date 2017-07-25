@@ -36,22 +36,50 @@ textarea {
     justify-content: space-between;
     flex-direction: column;
 }
+
 .item-post .image .top-img {
     flex: 2 0 0;
-    background: url('./../images/top-post-img.jpg') no-repeat center;
-    background-size: cover;
 }
+.item-post .image .top-img img {
+    height: 80px;
+}
+
 .item-post .image .upload-img {
     flex: 5 0 0;
-    background-color: aqua;
+    background-color: #06A345;
 }
+
 .item-post .image .bottom-img {
-    background: url('./../images/bottom-post-img.png') no-repeat center;
     text-align: center;
     color: #fff;
-    padding-top: 15px;
-    background-size: cover;
     flex: 4 0 0;
+    position: relative;
+}
+.item-post .image .bottom-img img {
+    z-index:  1;
+    height: 140px;
+}
+
+.item-post .image .bottom-img .text-post {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10px;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(30, 30, 30, .5);
+}
+.item-post .image .bottom-img h3 {
+/*     z-index: 2;
+position: absolute;
+color: #fff;
+text-shadow: 0 0 2px #222; */
+}
+
+.button-create-post {
+    margin-top: 20px;
 }
 
 .button-add-post {
