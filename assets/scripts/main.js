@@ -50,13 +50,47 @@ function readUrl(input) {
     }
 }
 
+$('#createPost').on('click', function (e) {
+    e.preventDefault();
+
+    var container = $(this).closest('.item-post');
+
+    html2canvas($(container).find('.image'), {
+        onrendered: function(canvas) {
+            theCanvas = canvas;
+            document.body.appendChild(canvas);
+
+            $("#img-out").append(canvas);
+            // Clean up
+            //document.body.removeChild(canvas);
+        }
+    });
+});
+
 ;$(function () {
     $('#addPost').on('click', function (e) {
         e.preventDefault();
 
-        var htmlPost = ' <div class="row item-post"> <input type="file" onchange="readUrl(this)" class="inp_upload-image" title="Загрузить изображение" name="uploadImg"/> <div class="main-block"> <div class="image"> <div class="top-img"></div><div class="upload-img"> <img src="" class="previewImg" alt=""> </div><div class="bottom-img"> <h3 class="js_show_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, quod!</h3> </div></div><div class="form input-group"> <div class="form-group"> <label for="text-post">Текс поста: <br />(юзай &lt;br /&gt)для переноса</label> <textarea class="form-control js_text_post" onkeyup="handleChangeContentPost(this)" rows="8" id="text-post"></textarea> </div></div></div></div>';
+        var htmlPost = "";
 
         $('.lists').append(htmlPost);
     });
 
 });
+
+
+// Скрипт div to image (Canvas2Image ??)
+/*
+        html2canvas($(".image"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+
+                // Convert and download as image
+                Canvas2Image.saveAsPNG(canvas); 
+                $("#img-out").append(canvas);
+                // Clean up
+                //document.body.removeChild(canvas);
+            }
+        });
+*/
