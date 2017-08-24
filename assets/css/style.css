@@ -1,5 +1,9 @@
 @import "http://fonts.fontstorage.com/import/robotomono.css";
-@import "http://fonts.fontstorage.com/import/intro.css";
+
+@font-face {
+    font-family: 'Intro';
+    src: url(../fonts/IntroRegular.ttf);
+}
 
 textarea {
     resize: none;
